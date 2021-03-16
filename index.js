@@ -11,11 +11,10 @@ const { id, password } = require('./auth.json');
   await page.click('button.marginBottom8-AtZOdT');
   await page.waitForNavigation();
   await page.goto('https://discord.com/channels/798398605614514196/798398605907460100');
-
+  
   setInterval(async () => {
     const response = await fetch('https://api.whatdoestrumpthink.com/api/v1/quotes/random');
     const { message } = await response.json();
-
     await page.focus('[data-slate-zero-width=z]');
     await page.type('[data-slate-zero-width=z]', message);
     await page.keyboard.press('Enter');
