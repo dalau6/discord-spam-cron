@@ -1,0 +1,24 @@
+{
+  "name": "discord-spam-cron",
+  "version": "1.0.0",
+  "description": "A headless chrome tool used to send spam messages on Discord",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --config ./jest.config.js --coverage",
+    "start": "NODE_TLS_REJECT_UNAUTHORIZED=0 node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dalau6/discord-spam-cron.git"
+  },
+  "author": "David L.",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dalau6/discord-spam-cron/issues"
+  },
+  "homepage": "https://github.com/dalau6/discord-spam-cron#readme",
+  "dependencies": {
+    "node-fetch": "^2.6.1",
+    "puppeteer": "^8.0.0"
+  }
+}
