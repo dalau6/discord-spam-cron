@@ -18,7 +18,6 @@
   },
   "homepage": "https://github.com/dalau6/discord-spam-cron#readme",
   "dependencies": {
-    "node-fetch": "^2.6.1",
     "puppeteer": "^8.0.0"
   }
 }
