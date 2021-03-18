@@ -1,22 +1,24 @@
-const puppeteer = require('puppeteer');
-const fetch = require('node-fetch');
-const { id, password } = require('./auth.json');
-
+const puppeteer = require('puppeteer'),
+  fetch = require('node-fetch'),
+  { id: id, password: password } = require('./auth.json');
 (async () => {
-  const browser = await puppeteer.launch();
-  const page = await browser.newPage();
-  await page.goto('https://discord.com/login');
-  await page.type('.inputDefault-_djjkz[name=email]', id);
-  await page.type('.inputDefault-_djjkz[name=password]', password);
-  await page.click('button.marginBottom8-AtZOdT');
-  await page.waitForNavigation();
-  await page.goto('https://discord.com/channels/798398605614514196/798398605907460100');
-  
-  setInterval(async () => {
-    const response = await fetch('https://api.whatdoestrumpthink.com/api/v1/quotes/random');
-    const { message } = await response.json();
-    await page.focus('[data-slate-zero-width=z]');
-    await page.type('[data-slate-zero-width=z]', message);
-    await page.keyboard.press('Enter');
-  }, 1000);
+  const a = await puppeteer.launch(),
+    t = await a.newPage();
+  await t.goto('https://discord.com/login'),
+    await t.type('.inputDefault-_djjkz[name=email]', id),
+    await t.type('.inputDefault-_djjkz[name=password]', password),
+    await t.click('button.marginBottom8-AtZOdT'),
+    await t.waitForNavigation(),
+    await t.goto(
+      'https://discord.com/channels/798398605614514196/798398605907460100'
+    ),
+    setInterval(async () => {
+      const a = await fetch(
+          'https://api.whatdoestrumpthink.com/api/v1/quotes/random'
+        ),
+        { message: e } = await a.json();
+      await t.focus('[data-slate-zero-width=z]'),
+        await t.type('[data-slate-zero-width=z]', e),
+        await t.keyboard.press('Enter');
+    }, 61e3);
 })();
