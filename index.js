@@ -20,5 +20,5 @@ const puppeteer = require('puppeteer'),
         await e.keyboard.press('Backspace', { delay: 1e3 }),
         await e.keyboard.press('Enter', { delay: 1e3 }),
         await e.keyboard.press('Enter', { delay: 1e3 });
-    }, 6e4);
+    }, 62e3);
 })();
